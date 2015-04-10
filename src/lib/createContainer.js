@@ -95,7 +95,7 @@ module.exports = function (Component, options) {
 				var props = _this.props || {};
 				var promise;
 
-				assign(_this.currentParams, nextParams);
+				assign(_this.currentParams, nextParams, _this.props.queryParams || {});
 				promise = Container.getAllQueries(_this.currentParams, optionalQueryNames);
 
 				promise.then(function (queryResults) {
